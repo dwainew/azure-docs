@@ -16,12 +16,12 @@ ms.date: 06/26/2019
 
 Azure SQL Database has a Domain Name System (DNS) server. PowerShell and REST APIs accept [calls to create and manage DNS aliases](#anchor-powershell-code-62x) for your SQL Database server name.
 
-A *DNS alias* can be used in place of the Azure SQL Database server name. Client programs can use the alias in their connection strings. The DNS alias provides a translation layer that can redirect your client programs to different servers. This layer spares you the difficulties of having to find and edit all the clients and their connection strings.
+A *DNS alias* can be used in place of the Azure SQL Database server name. Client programs can use the alias in their connection strings. The DNS alias provides a translation layer that can redirect your client programs to different servers. This layer spares you the difficulties of having to find and edit client connection strings.
 
 Common uses for a DNS alias include the following cases:
 
 - Create an easy to remember name for an Azure SQL Server.
-- During initial development, your alias can refer to a test SQL Database server. When the application goes live, you can modify the alias to refer to the production server. The transition from test to production does not require any modification to the configurations several clients that connect to the database server.
+- During initial development, your alias can refer to a test SQL Database server. When the application goes live, you can modify the alias to refer to the production server. The transition from test to production does not require any modification to the configuration of any clients that connect to the database server.
 - Suppose the only database in your application is moved to another SQL Database server. Here you can modify the alias without having to modify the configurations of several clients.
 - During a regional outage you use geo-restore to recover your database in a different server and region. You can modify your existing alias to point to the new server so that the existing client application could re-connect to it. 
 
